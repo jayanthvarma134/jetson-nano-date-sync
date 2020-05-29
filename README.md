@@ -15,7 +15,8 @@ It turns out I have to find a workaround. This way doesn't have the accuracy as 
 > ```sudo vi /etc/network/if-up.d/date-sync```
 3. Add excutable attribute to the `/etc/network/if-up.d/date-sync`:
 > ```sudo chmod +x /etc/network/if-up.d/date-sync```
-
+4. In the date-sync file change the year to whatever false year the jetson shows (2019 in this case):
+> ```if [ $(date +%Y) -eq 2019 ] ```
 # Raspbian
 If raspbian can not synchronize it's clock with internet time server, this workaround can help you. Let's check how the timedatectl tells:
 ```
